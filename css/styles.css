@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --altura_header: 5rem;
+    --color_primario:#051a33;
+    --color_secundario:#0b366b;
+
+    --padding_left_right:1.5rem;
+}
+a{
+    text-decoration: none;
+}
+ul,ol{
+    list-style: none;
+}
+html{
+    min-height: 100vh;
+}
+body{
+    height: 100%;
+    background-color: #777;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.icons{
+    width: 2.5rem;
+    color: white;
+}
+.header{
+    height: var(--altura_header);
+    background-color: var(--color_primario);
+}
+.close__icon{
+    display: none;
+}
+.logo{
+    font-size: 1.5rem;
+    color: white;
+    padding-left: var(--padding_left_right);
+}
+.container__icons{
+    padding-right: var(--padding_left_right);
+    cursor: pointer;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    position: relative;
+}
+.ul__links{
+    width: 100%;
+    /* height: calc(100vh - var(--altura_header)); */
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    top: var(--altura_header);
+
+    font-size: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4.25rem;
+
+    background-color: var(--color_secundario);
+
+    transition: all .3s ease-in;
+}
+.ul__links--show{
+    height: calc(100vh - var(--altura_header));
+}
+.icon--hidden{
+    display: none;
+}
+.icon--show{
+    display: block;
+}
+.link{
+    color: white;
+    background-color: var(--color_primario);
+    padding: .4rem .3125rem;
+}
+
+@media screen and (min-width:1000px){
+    .nav{
+        max-width: 75rem;
+        margin: 0 auto;
+    }
+    .container__icons{
+        display: none;
+    }
+    .ul__links{
+        position: static;
+        height: auto;
+        flex-direction: row;
+        width: auto;
+        background-color: transparent;
+        font-size: 1.3rem;
+        gap: 1.5rem;
+        padding-right: var(--padding_left_right);
+        overflow: visible;
+        pointer-events: auto;
+    }   
+    .li__links{
+        padding: .3rem .7rem;
+    }
+    .link{
+        background-color: var(--color_secundario);
+    }
+}
