@@ -24,13 +24,49 @@ body{
     background-color: #777;
     font-family: Arial, Helvetica, sans-serif;
 }
+/* GRID RESPONSIVE MAQUETADO */
+.grid-container{
+    display: grid;
+    grid-template: 
+    "header" 80px
+    "aside" 60px
+    "main" auto
+    "aside_2" 60px
+    "footer" 80px;
+}
+@media (min-width:1000px) {
+    .grid-container{
+        grid-template: 
+        "header header header" 80px
+        "aside  main   aside_2" auto
+        "footer footer footer" 80px /
+          200px auto   200px ;
+    }
+}
+.header{
+    background-color: var(--color_primario);
+    grid-area: header;
+}
+.aside{
+    background-color: orange;
+    grid-area: aside;
+}
+.aside_2{
+    background-color: green;
+    grid-area: aside_2;
+}
+.main{
+    background-color: violet;
+    min-height: 100vh;
+    grid-area: main;
+}   
+.footer{
+    background-color: chocolate;
+    grid-area: footer;
+}
 .icons{
     width: 2.5rem;
     color: white;
-}
-.header{
-    height: var(--altura_header);
-    background-color: var(--color_primario);
 }
 .close__icon{
     display: none;
